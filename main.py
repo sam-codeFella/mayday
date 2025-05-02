@@ -5,6 +5,7 @@ import os
 from routes.auth import router as auth_router
 from routes.chat import router as chat_router
 from routes.company import router as company_router
+import uvicorn
 # Load environment variables
 load_dotenv()
 
@@ -33,5 +34,4 @@ async def root():
     return {"message": "Welcome to the Chat API"}
 
 if __name__ == "__main__":
-    import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True) 
