@@ -1,0 +1,29 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+langchain = "*"
+langchain-openai = "*"
+python-dotenv = "*"
+sqlalchemy = "*"
+uvicorn = "*"
+fastapi = "*"
+python-jose = {extras = ["cryptography"], version = "==3.3.0"}
+passlib = {extras = ["bcrypt"], version = "==1.7.4"}
+psycopg2-binary = "==2.9.9"
+langchain-community = "*"
+langchain-anthropic = "*"
+pydantic-settings = "*"
+pydantic = {extras = ["email"], version = "*"}
+pinecone-client = "*"
+langchain-pinecone = "*"
+pypdf = "*"
+pypdf2 = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
+python_full_version = "3.10.13"
