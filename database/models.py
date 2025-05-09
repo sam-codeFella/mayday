@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Text, Float
+from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Text, Float, Boolean
 from sqlalchemy.dialects.postgresql import UUID, ARRAY, JSON
 from sqlalchemy.orm import relationship
 from datetime import datetime
@@ -73,6 +73,8 @@ class Company(Base):
     # Relationships
     documents = relationship("Document", back_populates="company")
     chunks = relationship("Chunk", back_populates="company")
+    config = relationship("CompanyConfig", back_populates="company")
+    resources = relationship("CompanyResource", back_populates="company")
 
 
 class Document(Base):
@@ -103,4 +105,30 @@ class Chunk(Base):
     # Relationships
     document = relationship("Document", back_populates="chunks")
     company = relationship("Company", back_populates="chunks")
+
+
+class CompanyConfig(Base):
+    __tablename__ = "company_config"
+    
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, index=True)
+    company_id = Column(UUID(as_uuid=True), ForeignKey("company.id", ondelete="CASCADE"), nullable=False, unique=True)
+    storage_location = Column(String, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    
+    # Relationships
+    company = relationship("Company", back_populates="config")
+
+
+class CompanyResource(Base):
+    __tablename__ = "company_resources"
+    
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, index=True)
+    company_id = Column(UUID(as_uuid=True), ForeignKey("company.id", ondelete="CASCADE"), nullable=False)
+    resource_location = Column(String, nullable=False)
+    source_location = Column(String, nullable=True)
+    is_ingested = Column(Boolean, default=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    
+    # Relationships
+    company = relationship("Company", back_populates="resources")
 
