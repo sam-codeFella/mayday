@@ -34,5 +34,5 @@ def create_specific_table(table_name: str):
     return True
 
 if __name__ == "__main__":
-    # init_db()
-    create_specific_table("votes")
+    init_db()
+    # create_specific_table("votes")

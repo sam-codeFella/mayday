@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a967acdd872794dfd6c47bbda0b0d2d9170e356e9cd888b57a119d92b2fc446d"
+            "sha256": "189ee5633558d3e0f9e90d536290685eef45f9b5a8dbb3bfe3210c8775b9935b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -226,6 +226,22 @@
             ],
             "markers": "python_version >= '3.8'",
             "version": "==4.3.0"
+        },
+        "boto3": {
+            "hashes": [
+                "sha256:9939b65b0bf04781f531245f110dd0ada6825f06cf9b95350efb830b9f69d214"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.9'",
+            "version": "==1.38.12"
+        },
+        "botocore": {
+            "hashes": [
+                "sha256:86c459de3e39b418f4eb81e88c23fba02995496141db73816e7f65cb8b04408b",
+                "sha256:bcea44f3fe3a5bc18030656b8d32013d8b2d76b54433f591500a14bcac2e94ee"
+            ],
+            "markers": "python_version >= '3.9'",
+            "version": "==1.38.12"
         },
         "certifi": {
             "hashes": [
@@ -739,6 +755,14 @@
             ],
             "markers": "python_version >= '3.8'",
             "version": "==0.9.0"
+        },
+        "jmespath": {
+            "hashes": [
+                "sha256:02e2e4cc71b5bcab88332eebf907519190dd9e6e82107fa7f83b1003a6252980",
+                "sha256:90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==1.0.1"
         },
         "jsonpatch": {
             "hashes": [
@@ -1731,6 +1755,14 @@
             ],
             "markers": "python_version >= '3.6' and python_version < '4'",
             "version": "==4.9"
+        },
+        "s3transfer": {
+            "hashes": [
+                "sha256:35b314d7d82865756edab59f7baebc6b477189e6ab4c53050e28c1de4d9cce18",
+                "sha256:8ac58bc1989a3fdb7c7f3ee0918a66b160d038a147c7b5db1500930a607e9a1c"
+            ],
+            "markers": "python_version >= '3.9'",
+            "version": "==0.12.0"
         },
         "six": {
             "hashes": [

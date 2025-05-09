@@ -21,6 +21,7 @@ pinecone-client = "*"
 langchain-pinecone = "*"
 pypdf = "*"
 pypdf2 = "*"
+boto3 = "*"
 
 [dev-packages]
 
