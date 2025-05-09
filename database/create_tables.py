@@ -35,4 +35,4 @@ def create_specific_table(table_name: str):
 
 if __name__ == "__main__":
     # init_db()
-    create_specific_table("company_resources")
+    create_specific_table("chunks")

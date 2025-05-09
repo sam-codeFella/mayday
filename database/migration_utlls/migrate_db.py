@@ -124,7 +124,7 @@ if __name__ == "__main__":
     
     try:
         # Migrate a specific table
-        success = migrator.migrate_table("company")
+        success = migrator.migrate_table("documents")
         if success:
             print("Migration completed successfully")
         else:

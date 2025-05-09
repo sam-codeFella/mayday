@@ -82,6 +82,7 @@ class Document(Base):
     
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, index=True)
     company_id = Column(UUID(as_uuid=True), ForeignKey("company.id", ondelete="CASCADE"), nullable=False)
+    resource_id = Column(UUID(as_uuid=True), ForeignKey("company_resources.id", ondelete="CASCADE"), nullable=True)
     text = Column(Text)
     page_number = Column(Integer, nullable=True)
     file_path = Column(String, nullable=True)
@@ -90,6 +91,7 @@ class Document(Base):
     # Relationships
     company = relationship("Company", back_populates="documents")
     chunks = relationship("Chunk", back_populates="document")
+    resource = relationship("CompanyResource", back_populates="documents")
 
 
 class Chunk(Base):
@@ -131,4 +133,5 @@ class CompanyResource(Base):
     
     # Relationships
     company = relationship("Company", back_populates="resources")
+    documents = relationship("Document", back_populates="resource")
 
